@@ -1,0 +1,14 @@
+.header {
+  background: var(--primary-color);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--m-16);
+  height: var(--m-32);
+  margin: 0 auto;
+  max-width: var(--container-xl);
+  padding: 8px 0;
+  width: 90%;
+}

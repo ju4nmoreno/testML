@@ -1,0 +1,23 @@
+.form {
+  border-radius: 5px;
+  display: flex;
+  grid-column: 3/12;
+  overflow: hidden;
+  margin-left: calc(var(--m-16) * -1);
+}
+
+.input {
+  flex-grow: 1;
+  font-size: var(--font-18);
+  height: var(--m-32);
+  padding-left: var(--m-16);
+}
+
+.button {
+  height: var(--m-32);
+  width: var(--m-32);
+  background: url(../assets/ic_Search.png);
+  background-color: var(--gray-eee);
+  background-repeat: no-repeat;
+  background-position: center;
+}

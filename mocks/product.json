@@ -1,0 +1,30 @@
+{
+  "id": "MLA825206827",
+  "title": "Apple iPhone 11 (128 Gb) - Negro",
+  "seller_id": 90262631,
+  "category_id": "MLA1055",
+  "official_store_id": null,
+  "price": 310000,
+  "base_price": 310000,
+  "original_price": null,
+  "currency_id": "ARS",
+  "sold_quantity": 100,
+  "buying_mode": "buy_it_now",
+  "listing_type_id": "gold_special",
+  "start_time": "2019-11-14T00:56:59.000Z",
+  "stop_time": "2039-11-08T04:00:00.000Z",
+  "condition": "new",
+  "permalink": "https://articulo.mercadolibre.com.ar/MLA-825206827-apple-iphone-11-128-gb-negro-_JM",
+  "thumbnail_id": "865864-MLA46114990464_052021",
+  "thumbnail": "http://http2.mlstatic.com/D_865864-MLA46114990464_052021-I.jpg",
+  "secure_thumbnail": "https://http2.mlstatic.com/D_865864-MLA46114990464_052021-I.jpg",
+  "accepts_mercadopago": true,
+  "non_mercado_pago_payment_methods": [ ],
+  "shipping": {
+    "local_pick_up": true,
+    "free_shipping": true,
+    "logistic_type": "xd_drop_off",
+    "store_pick_up": false
+  },
+  "seller_contact": null
+}

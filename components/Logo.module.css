@@ -1,0 +1,10 @@
+.logo {
+  grid-column: 2/3;
+  height: var(--m-32);
+  display: block;
+}
+
+.img {
+  height: var(--m-32);
+  width: auto;
+}
