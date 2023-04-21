@@ -7,15 +7,18 @@ export const useGetItems = () => {
   const searchParams = useSearchParams();
   const query = searchParams.get("search");
   const [items, setItems] = useState<Item[]>([]);
+  const [categories, setCategores] = useState<string[]>([]);
 
   useEffect(() => {
     if (!query) return;
-    fetchQuery(query).then(({ items }) => {
+    fetchQuery(query).then(({ items, categories }) => {
       setItems(items);
+      setCategores(categories);
     });
   }, [query]);
 
   return {
     items,
+    categories,
   };
 };

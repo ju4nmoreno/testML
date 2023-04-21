@@ -13768,5 +13768,28 @@
       ],
       "inventory_id": null
     }
+  ],
+  "filters": [
+    {
+      "id": "category",
+      "name": "Categorías",
+      "type": "text",
+      "values": [
+        {
+          "id": "MLA1002",
+          "name": "Televisores",
+          "path_from_root": [
+            {
+              "id": "MLA1000",
+              "name": "Electrónica, Audio y Video"
+            },
+            {
+              "id": "MLA1002",
+              "name": "Televisores"
+            }
+          ]
+        }
+      ]
+    }
   ]
 }

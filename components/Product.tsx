@@ -13,10 +13,7 @@ export const Product: React.FC<Props> = ({ item }) => {
   return (
     <article className={styles.product}>
       <Link href={`/items/${id}`} className={styles.anchor}>
-        {/*
-        <Image width={300} height={300} src={picture} alt={title} />
-        */}
-        <img className={styles.img} src={picture} alt="e" />
+        <Image width={180} height={180} src={picture} alt={title} />
         <div className={styles.info}>
           <div className={styles.header}>
             <p className={styles.price}>

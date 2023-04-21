@@ -1,5 +1,5 @@
 import { AUTHOR as author } from "@m/consts";
-import { Item, ResultItems } from "@m/types";
+import { Item, ResultItems, Filter, Value, PathFromRoot } from "@m/types";
 import Mocks from "../mocks/allProducts.json";
 
 interface Result {
@@ -20,11 +20,19 @@ interface Result {
 }
 
 export const fetchQuery = async (query: string): Promise<ResultItems> => {
-  // const API = "https://api.mercadolibre.com/sites/MLA/search?q=";
-  // const data = await fetch(`${API}${query}`);
-  // const { results } = await data.json();
+  const API = "https://api.mercadolibre.com/sites/MLA/search?q=";
+  const data = await fetch(`${API}${query}`);
+  const response = await data.json();
+  const { results, filters } = response;
 
-  const { results } = Mocks;
+  let categories: ResultItems["categories"] = [];
+
+  if (filters.length > 0) {
+    categories = filters
+      .map(({ values }: Filter) => values)[0]
+      .map(({ path_from_root }: Value) => path_from_root)[0]
+      .map(({ name }: PathFromRoot) => name);
+  }
 
   const items: Item[] = results.map((result: Result) => {
     return {
@@ -32,8 +40,8 @@ export const fetchQuery = async (query: string): Promise<ResultItems> => {
       title: result.title,
       price: {
         currency: result.currency_id,
-        amount: result.available_quantity,
-        decimals: result.price,
+        decimals: result.available_quantity,
+        amount: result.price,
       },
       picture: result.thumbnail,
       free_shipping: result.shipping.free_shipping,
@@ -41,11 +49,11 @@ export const fetchQuery = async (query: string): Promise<ResultItems> => {
     };
   });
 
-  const fourFirstItems = items.slice(0, 4);
+  const topFourResults = items.slice(0, 4);
 
   return {
     author,
-    categories: [],
-    items: fourFirstItems,
+    categories,
+    items: topFourResults,
   };
 };
